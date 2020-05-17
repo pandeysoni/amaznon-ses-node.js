@@ -8,12 +8,13 @@ const ses = new AWS.SES({
  * */
 const mainFunction =  async () => {
     const params =  require("./email-template.json");
-    return await ses.updateTemplate(params).promise();
+    return ses.updateTemplate(params).promise();
+    console.log("I am here now.")
 }
 
 mainFunction().then(() => {
-    console.log('template updated successfully.');
-}, (ex) => {
-    console.log('Error in template updation.');
-    console.dir(ex.message);
-});
+    console.log('email sent successfully.');
+}).catch((error)=>{
+    console.log('Error in email send.');
+    console.dir(error.message);
+})

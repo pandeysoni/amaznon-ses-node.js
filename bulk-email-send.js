@@ -40,8 +40,8 @@ const mainFunction =  async () => {
 }
 
 mainFunction().then(() => {
-    console.log('email sent successfully.');
-}, (ex) => {
+    console.log('Here I am then.');
+}).catch((error)=>{
     console.log('Error in email send.');
-    console.dir(ex.message);
-});
+    console.dir(error.message);
+})

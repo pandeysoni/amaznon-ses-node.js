@@ -12,7 +12,7 @@ const mainFunction =  async () => {
 
 mainFunction().then(() => {
     console.log('template deleted successfully.');
-}, (ex) => {
-    console.log('Error in template deletion.');
-    console.dir(ex.message);
-});
+}).catch((error)=>{
+    console.log('Error in email send.');
+    console.dir(error.message);
+})

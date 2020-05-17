@@ -12,8 +12,8 @@ const mainFunction =  async () => {
 }
 
 mainFunction().then(() => {
-    console.log('template created successfully.');
-}, (ex) => {
-    console.log('Error in template creation.');
-    console.dir(ex.message);
-});
+    console.log('email sent successfully.');
+}).catch((error)=>{
+    console.log('Error in email send.');
+    console.dir(error.message);
+})
